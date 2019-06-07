@@ -1,0 +1,27 @@
+# Problem: compute the total number of bears produced every month
+
+# Input: serial_number, a list of unique integers for each bear
+
+serial_number = [71, 367, 10, 444, 1259, 1001, 879, 332]
+
+# Sub-problem: compute the length of list
+
+length = 0
+for serial in serial_number:
+    length = length + 1
+
+# Sub-problem: find the maximum serial_number in the list
+
+maximum = serial_number[0]
+for serial in serial_number:
+    if serial > maximum:
+        maximum = serial
+
+# Sub-problem: compute the length of list 
+total = 0
+for serial in serial_number:
+    total = maximum - length
+bears = total / length
+total = maximum + bears
+
+print('The total bears produced is', round(total))
